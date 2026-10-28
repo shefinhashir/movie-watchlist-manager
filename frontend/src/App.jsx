@@ -18,7 +18,11 @@ import {
 } from "lucide-react";
 import "./App.css";
 
-const API = "http://localhost:5000/api/movies";
+const API_BASE_URL = (
+  import.meta.env.VITE_API_URL || "http://localhost:5000"
+).replace(/\/+$/, "");
+
+const API = `${API_BASE_URL}/api/movies`;
 
 const GENRES = [
   "Action",
